@@ -24,7 +24,7 @@ BigBruda is an up to date version of BigBrother.
 
 #### Notices
 * Some protocol issues might still occur, please open an issue for them.
-* There is a dupe when closing your inventory with an item in your cursor inventory when the InventoryTransactionEvent was cancelled
+* There is a dupe when closing your inventory with an item in your cursor inventory when the InventoryTransactionEvent is cancelled
 
 #### API
 * Parts of your plugin may need to be modified for the java users experience
