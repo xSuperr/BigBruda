@@ -1,22 +1,11 @@
- BigBrother
+ BigBruda
 =============
-[![Build Status](https://travis-ci.org/BigBrotherTeam/BigBrother.svg?branch=master)](https://travis-ci.org/BigBrotherTeam/BigBrother)
-[![Download](https://api.bintray.com/packages/bigbrotherteam/BigBrother/BigBrother/images/download.svg)](https://bintray.com/bigbrotherteam/BigBrother/BigBrother/_latestVersion)
-[![license](https://img.shields.io/github/license/BigBrotherTeam/BigBrother.svg)](https://github.com/BigBrotherTeam/BigBrother/blob/master/LICENSE)
-[![GitHub contributors](https://img.shields.io/github/contributors/BigBrotherTeam/BigBrother.svg)](https://github.com/BigBrotherTeam/BigBrother/graphs/contributors)
-[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/BigBrotherTeam/BigBrother.svg)](http://isitmaintained.com/project/BigBrotherTeam/BigBrother "Average time to resolve an issue")
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/BigBrotherTeam/BigBrother.svg)](http://isitmaintained.com/project/BigBrotherTeam/BigBrother "Percentage of issues still open")
-
-Welcome to BigBrother, a [shoghicp project that was abandoned](https://github.com/shoghicp/bigbrother) and taken back by the BigBrotherTeam!
+BigBruda is an up to date version of BigBrother.
 -------------
-
-### Watch Video working on PocketMine-MP!
-[![](http://img.youtube.com/vi/4oaYIW8YuNg/0.jpg)](http://www.youtube.com/watch?v=4oaYIW8YuNg)
 
 #### Notice
 * This plugin supports use with PocketMine-MP (pmmp). Using spoons will cause many bugs & problems.
-* This plugin supports Minecraft version 1.12.2 ***ONLY.***
-  Currently any other newer versions are experimental, please refer to the last section of this document.
+* This plugin supports Minecraft Java version 1.12.2 ***ONLY.***
 
 #### Features implemented
 * Login (with premium account or not)
@@ -33,12 +22,11 @@ Welcome to BigBrother, a [shoghicp project that was abandoned](https://github.co
 #### Features not yet implemented
 * Crafting
 
-#### Experimental package flavors
+#### Notices
+* Some protocol issues might still occur, please open an issue for them.
+* There is a dupe when closing your inventory with an item in your cursor inventory when the InventoryTransactionEvent was cancelled
 
-These package flavors below are EXPERIMENTAL which support newer version of Minecraft PC Java Edition.
-Currently, there are a lot of problems and not stable yet.
-Any patches are welcome, and well-debugged and well-described issues are also welcome.
-
-* 1.16.4  
-[![Build Status](https://travis-ci.org/BigBrotherTeam/BigBrother.svg?branch=1.16.4)](https://travis-ci.org/BigBrotherTeam/BigBrother)
-[![Download](https://api.bintray.com/packages/bigbrotherteam/BigBrother/BigBrother-1.16.4/images/download.svg)](https://bintray.com/bigbrotherteam/BigBrother/BigBrother-1.16.4/_latestVersion)
+#### API
+* Parts of your plugin may need to be modified for the java users experience
+* Forms are not in java, replace them with InvMenus
+* Use the JavaUtils class to translate InvMenus to java (Experimental)
