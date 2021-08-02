@@ -1,0 +1,45 @@
+language: php
+
+git:
+  depth: false
+
+php:
+  - 7.2
+  - 7.3
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+    - build/DevTools.phar
+
+install:
+  - echo | pecl install channel://pecl.php.net/yaml-2.0.4
+  - git clone https://github.com/pmmp/pthreads.git
+  - pushd pthreads
+  - git checkout 1b7da492b944146fa9680f6399bd9c6c6c6095e0
+  - phpize
+  - ./configure
+  - make
+  - make install
+  - popd
+  - echo "extension=pthreads.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+  - composer install
+
+before_script:
+  - find src/ -type f -name '*.php' | xargs -n 1 php -l
+
+script:
+  - composer build
+
+before_deploy:
+  - scripts/before_deploy
+
+deploy:
+  provider: bintray
+  user: ${BINTRAY_USER}
+  key: ${BINTRAY_SECRET}
+  skip_cleanup: true
+  on:
+    all_branches: true
+    condition: $TRAVIS_PHP_VERSION = 7.2 && $TRAVIS_PULL_REQUEST = false && $TRAVIS_BRANCH =~ ^(master|1.13.2|1.14.4|1.16.4)$
+  file: build/bintray.json
